@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spin Wheel - Nagarik and Sambidhan</title>
 </head>
-<div id="google_translate_element"></div>
+<div id="google_translate_element">
 
     <!-- Load the Google Translate script -->
     <script type="text/javascript">
@@ -15,7 +15,7 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script></div>
 <style>
     body {
             font-family: 'Arial', sans-serif;
@@ -124,6 +124,36 @@
         .incorrect {
             color: #e74c3c;
         }
+
+        #google_translate_element {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 15px;
+      }
+
+      #google_translate_element select {
+        background-color: #fcdc94;
+        color: #4a4a4a;
+        border: 1px solid #78aba8;
+        border-radius: 4px;
+        padding: 5px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        outline: none;
+      }
+
+      #google_translate_element select:hover {
+        border-color: #ef9c66;
+      }
+
+      #google_translate_element img {
+        display: none;
+      }
 </style>
 <body>
     <div class="container">

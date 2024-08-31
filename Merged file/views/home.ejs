@@ -4,30 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <div id="google_translate_element"></div>
-
-    <!-- Load the Google Translate script -->
-    <script type="text/javascript">
+    <div id="google_translate_element">
+      <!-- Load the Google Translate script -->
+      <script type="text/javascript">
         function loadGoogleTranslate() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+            },
+            "google_translate_element"
+          );
         }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+      </script>
+      <script
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
+      ></script>
+    </div>
     <style>
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
       @keyframes slideIn {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
       @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
       body {
         margin: 0;
@@ -44,6 +66,10 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .container h1 {
+        margin-top: 5px;
+      }
       h1 {
         font-size: 2.5em;
         margin-bottom: 20px;
@@ -57,7 +83,8 @@
         margin-bottom: 30px;
         animation: slideIn 0.5s ease-out;
       }
-      .score-board, .leaderboard {
+      .score-board,
+      .leaderboard {
         background-color: rgba(255, 255, 255, 0.1);
         padding: 15px;
         border-radius: 10px;
@@ -67,7 +94,8 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
       }
-      .score-board h2, .leaderboard h2 {
+      .score-board h2,
+      .leaderboard h2 {
         font-size: 1.5em;
         margin-top: 0;
         text-align: center;
@@ -126,6 +154,37 @@
       .signout-button:hover {
         background-color: #ff6666;
       }
+
+      #google_translate_element {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 15px;
+      }
+
+      #google_translate_element select {
+        background-color: #fcdc94;
+        color: #4a4a4a;
+        border: 1px solid #78aba8;
+        border-radius: 4px;
+        padding: 5px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        outline: none;
+      }
+
+      #google_translate_element select:hover {
+        border-color: #ef9c66;
+      }
+
+      #google_translate_element img {
+        display: none;
+      }
+
       #toast-container {
         position: fixed;
         bottom: 20px;
@@ -140,13 +199,15 @@
       <div class="info-container">
         <div class="score-board">
           <h2>Your Score</h2>
-          <p style="text-align: center; font-size: 2em; font-weight: bold;"><%= user.score %></p>
+          <p style="text-align: center; font-size: 2em; font-weight: bold">
+            <%= user.score %>
+          </p>
         </div>
         <div class="leaderboard">
           <h2>Leaderboard</h2>
           <ol>
             <% topPlayers.forEach((player, index) => { %>
-              <li><%= player.fullName %> - <%= player.score %> points</li>
+            <li><%= player.fullName %> - <%= player.score %> points</li>
             <% }); %>
           </ol>
         </div>
@@ -154,31 +215,46 @@
       <div class="games">
         <div class="game-icon">
           <a href="/snake-ladder">
-            <img src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fkisspng-snakes-and-ladders-ludo-neo-classic-ludo-king-d-snakes-and-ladders-5b540e2b433a19.0289314515322353072754.png895b845c-0549-46da-9ebd-fd39c6bf9edb?alt=media&token=c25355c8-28db-4aa4-a772-be596aa204e4" alt="Snake Ladder" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fkisspng-snakes-and-ladders-ludo-neo-classic-ludo-king-d-snakes-and-ladders-5b540e2b433a19.0289314515322353072754.png895b845c-0549-46da-9ebd-fd39c6bf9edb?alt=media&token=c25355c8-28db-4aa4-a772-be596aa204e4"
+              alt="Snake Ladder"
+            />
             <p>Snake Ladder</p>
           </a>
         </div>
         <div class="game-icon">
           <a href="/hangman">
-            <img src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngwing.com%20(2).png4c305bb2-be16-4b1e-9d05-23f8cda332d4?alt=media&token=2bf12c98-b914-4ef8-9472-0291f7ae5f99" alt="Hangman Game" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngwing.com%20(2).png4c305bb2-be16-4b1e-9d05-23f8cda332d4?alt=media&token=2bf12c98-b914-4ef8-9472-0291f7ae5f99"
+              alt="Hangman Game"
+            />
             <p>Hangman Game</p>
           </a>
         </div>
         <div class="game-icon">
           <a href="/quiz">
-            <img src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngwing.com%20(3).png23425e35-c897-4502-938a-0db9adc3bd01?alt=media&token=3b0233fd-4923-4e28-9093-9d267a329738" alt="Quiz" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngwing.com%20(3).png23425e35-c897-4502-938a-0db9adc3bd01?alt=media&token=3b0233fd-4923-4e28-9093-9d267a329738"
+              alt="Quiz"
+            />
             <p>Quiz</p>
           </a>
         </div>
         <div class="game-icon">
           <a href="/scenario">
-            <img src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngwing.com%20(4).png23d939d4-90ae-4164-b545-42aceec0e389?alt=media&token=9ed559f3-820e-40c2-b7cd-b6b264babb45" alt="Scenario Based Quiz" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngwing.com%20(4).png23d939d4-90ae-4164-b545-42aceec0e389?alt=media&token=9ed559f3-820e-40c2-b7cd-b6b264babb45"
+              alt="Scenario Based Quiz"
+            />
             <p>Scenario Based Quiz</p>
           </a>
         </div>
         <div class="game-icon">
           <a href="/spinwheel">
-            <img src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngegg%20(5).pngf9a34058-2587-452f-8a55-e7878eaedfe0?alt=media&token=29720eb9-dcfe-4806-a2c0-be4abaf3a9cd" alt="Spin Wheel" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2Fpngegg%20(5).pngf9a34058-2587-452f-8a55-e7878eaedfe0?alt=media&token=29720eb9-dcfe-4806-a2c0-be4abaf3a9cd"
+              alt="Spin Wheel"
+            />
             <p>Spin Wheel</p>
           </a>
         </div>

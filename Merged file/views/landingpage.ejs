@@ -4,17 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nagarik Aur Sambidhan</title>
-    <div id="google_translate_element"></div>
-
-    <!-- Load the Google Translate script -->
-    <script type="text/javascript">
+    <div id="google_translate_element">
+      <!-- Load the Google Translate script -->
+      <script type="text/javascript">
         function loadGoogleTranslate() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+            },
+            "google_translate_element"
+          );
         }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+      </script>
+      <script
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
+      ></script>
+    </div>
     <style>
       .nav {
         background-color: transparent;
@@ -395,11 +401,40 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      /* Hover effect for View All link */
       a.view-all:hover {
         background-color: #e9ecef;
         color: #004085;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #google_translate_element {
+        display: flex;
+        justify-content: flex-end; /* Align to the right side of the container */
+        margin-top: 20px; /* Add space above the element */
+        margin-bottom: 20px; /* Add space below the element */
+        padding: 10px; /* Add some padding around the element */
+        background-color: #ba1d1d; /* Background color */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      #google_translate_element select {
+        background-color: #fcdc94; /* Background color of the dropdown */
+        color: #4a4a4a; /* Text color */
+        border: 1px solid #78aba8; /* Border color */
+        border-radius: 4px; /* Rounded corners */
+        padding: 5px; /* Padding inside the dropdown */
+        font-family: "Montserrat", sans-serif; /* Font family */
+        font-size: 14px; /* Font size */
+        outline: none; /* Remove outline */
+      }
+
+      #google_translate_element select:hover {
+        border-color: #ef9c66; /* Border color on hover */
+      }
+
+      #google_translate_element img {
+        display: none; /* Hide the Google Translate branding image */
       }
     </style>
   </head>
