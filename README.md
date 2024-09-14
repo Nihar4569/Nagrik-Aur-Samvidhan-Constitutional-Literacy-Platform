@@ -74,7 +74,7 @@ We welcome contributions to improve and expand the platform. To contribute:
    ```bash
    git checkout -b feature-branch
    ```
-3. **Commit Changes**: Commit your changes with a descriptive message.
+3. **Commit Changes**: Commit your changes with a descriptive message. 
    ```bash
    git commit -am 'Add new feature'
    ```
